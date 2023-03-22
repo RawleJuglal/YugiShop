@@ -99,4 +99,16 @@ body{
 /*Footer Styles*/
 .--footer{
   background-color:var(--feldgrau);
+  color:whitesmoke;
+  text-shadow:0 0 2px var(--skyblue);
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  padding:1.2em 1em;
+}
+
+.--footer-location-container{
+  display:flex;
+  align-items: center;
 }
