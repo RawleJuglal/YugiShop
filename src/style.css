@@ -91,9 +91,21 @@ body{
 }
 
 /*Main Content Styles*/
-.--main-content-container{
-  height:60vh;
-  border:1px solid var(--gunmetal);
+.--main-content-cards{
+  display:flex;
+  flex-wrap:wrap;
+}
+.card {
+  width: 9.375em;
+  margin: .3125em;
+  border-radius: 20px;
+  padding: .625em;
+  box-shadow: rgb(0 0 0 / 12%) 0 .0625em .5em;
+}
+
+.card img{
+  width:100%;
+  object-fit: cover;
 }
 
 /*Footer Styles*/
@@ -111,4 +123,12 @@ body{
 .--footer-location-container{
   display:flex;
   align-items: center;
+}
+
+@media (min-width:960px) {
+  .--footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+  }
 }

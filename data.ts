@@ -1,3 +1,6 @@
+import { TraderLevel } from "./src/enums";
+import { Level, Monster, FrameType, Race, Attr} from './src/types'
+
 const user: {
     firstName:string;
     lastName:string;
@@ -11,49 +14,49 @@ const user: {
 const reviews: {
     name:string;
     stars:number;
-    elite:boolean;
+    trader:TraderLevel;
     dateJoined:string;
     testimonial:string;
   }[] = [
     {
       name:'Howie Christolf',
       stars:5,
-      elite:true,
+      trader:TraderLevel.RARE_TRADER,
       dateJoined:'01-25-2023',
       testimonial:'Amazing selection of Yu-Gi-Oh! cards, with knowledgeable and friendly staff. I found exactly what I was looking for and more!'
     },
     {
       name: "John Smith",
       stars: 4.5,
-      elite: true,
+      trader: TraderLevel.RARE_TRADER,
       dateJoined: "2020-01-15",
       testimonial: "This is my go-to place for all my electronics needs. The staff is knowledgeable and always willing to help."
     }, 
     {
       name: "Sarah Johnson",
       stars: 5,
-      elite: true,
+      trader: TraderLevel.ELITE_TRADER,
       dateJoined: "2018-05-01",
       testimonial: "I have been a loyal customer for years and have never been disappointed. The selection is great and the prices are unbeatable."
     }, 
     {
       name: "David Kim",
       stars: 3,
-      elite: false,
+      trader: TraderLevel.COMMON_TRADER,
       dateJoined: "2021-02-20",
       testimonial: "The customer service could be better. I felt like I was being rushed through my purchase and didn't have all my questions answered."
     },  
     {
       name: "Ava Martinez",
       stars: 4,
-      elite: false,
+      trader: TraderLevel.COMMON_TRADER,
       dateJoined: "2019-11-10",
       testimonial: "The quality of the products is great, but the prices are a bit steep compared to other stores in the area."
     }, 
     {
       name: "Jacob Nguyen",
       stars: 5,
-      elite: true,
+      trader: TraderLevel.COMMON_TRADER,
       dateJoined: "2017-08-15",
       testimonial: "This is by far the best electronics store I have ever been to. The staff is amazing and the selection is unbeatable."
     }
@@ -63,20 +66,32 @@ const Cards: {
     id:number;
     available:boolean;
     name:string;
-    type:string;
-    frameType:string;
+    type:Monster;
+    frameType:FrameType;
     desc:string;
     atk:number;
     def?:number;
-    level?:number;
-    race:string;
-    attribute:string;
+    level?:Level;
+    race:Race;
+    attribute:Attr;
     archetype?:string;
     linkval?:number;
     linkmarkers?:string[];
     card_sets?:{}[];
-    card_images:{}[];
-    card_prices:{}[];
+    card_images:{
+        "id": number;
+        "image_url": string;
+        "image_url_small": string;
+        "image_url_cropped": string;
+        "image_local":string;
+    }[];
+    card_prices:{
+        "cardmarket_price": string;
+        "tcgplayer_price": string;
+        "ebay_price": string;
+        "amazon_price": string;
+        "coolstuffinc_price": string;
+    }[];
 }[] = [
     {
         "id": 36033786,
@@ -132,7 +147,8 @@ const Cards: {
                 "id": 36033786,
                 "image_url": "https://images.ygoprodeck.com/images/cards/36033786.jpg",
                 "image_url_small": "https://images.ygoprodeck.com/images/cards_small/36033786.jpg",
-                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/36033786.jpg"
+                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/36033786.jpg",
+                "image_local":"./images/Cyberse-Wizard.jpg"
             }
         ],
         "card_prices": [
@@ -192,7 +208,8 @@ const Cards: {
                 "id": 98555327,
                 "image_url": "https://images.ygoprodeck.com/images/cards/98555327.jpg",
                 "image_url_small": "https://images.ygoprodeck.com/images/cards_small/98555327.jpg",
-                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/98555327.jpg"
+                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/98555327.jpg",
+                "image_local":"./images/Galaxy-Wizard.jpg"
             }
         ],
         "card_prices": [
@@ -231,7 +248,8 @@ const Cards: {
                 "id": 41544074,
                 "image_url": "https://images.ygoprodeck.com/images/cards/41544074.jpg",
                 "image_url_small": "https://images.ygoprodeck.com/images/cards_small/41544074.jpg",
-                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/41544074.jpg"
+                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/41544074.jpg",
+                "image_local":"./images/Kamionwizard.jpg"
             }
         ],
         "card_prices": [
@@ -261,8 +279,9 @@ const Cards: {
                 "id": 4392470,
                 "image_url": "https://images.ygoprodeck.com/images/cards/4392470.jpg",
                 "image_url_small": "https://images.ygoprodeck.com/images/cards_small/4392470.jpg",
-                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/4392470.jpg"
-                }
+                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/4392470.jpg",
+                "image_local":"./images/Leo-Wizard.jpg"
+            }
         ],
         "card_prices": [
             {
@@ -308,7 +327,8 @@ const Cards: {
                 "id": 85497611,
                 "image_url": "https://images.ygoprodeck.com/images/cards/85497611.jpg",
                 "image_url_small": "https://images.ygoprodeck.com/images/cards_small/85497611.jpg",
-                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/85497611.jpg"
+                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/85497611.jpg",
+                "image_local":"./images/Odd-Eyes-Wizard-Dragon.jpg"
             }
         ],
         "card_prices": [
@@ -368,7 +388,8 @@ const Cards: {
                 "id": 62950604,
                 "image_url": "https://images.ygoprodeck.com/images/cards/62950604.jpg",
                 "image_url_small": "https://images.ygoprodeck.com/images/cards_small/62950604.jpg",
-                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/62950604.jpg"
+                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/62950604.jpg",
+                "image_local":"./images/Silent-Psychic-Wizard.jpg"
             }
         ],
         "card_prices": [
@@ -422,7 +443,8 @@ const Cards: {
                 "id": 50237654,
                 "image_url": "https://images.ygoprodeck.com/images/cards/50237654.jpg",
                 "image_url_small": "https://images.ygoprodeck.com/images/cards_small/50237654.jpg",
-                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/50237654.jpg"
+                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/50237654.jpg",
+                "image_local":"./images/The-Dark-Magicians.jpg"
             }
         ],
         "card_prices": [
@@ -553,7 +575,8 @@ const Cards: {
                 "id": 71625222,
                 "image_url": "https://images.ygoprodeck.com/images/cards/71625222.jpg",
                 "image_url_small": "https://images.ygoprodeck.com/images/cards_small/71625222.jpg",
-                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/71625222.jpg"
+                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/71625222.jpg",
+                "image_local":"./images/Time-Wizard.jpg"
             }
         ],
         "card_prices": [
@@ -592,7 +615,8 @@ const Cards: {
                 "id": 26273196,
                 "image_url": "https://images.ygoprodeck.com/images/cards/26273196.jpg",
                 "image_url_small": "https://images.ygoprodeck.com/images/cards_small/26273196.jpg",
-                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/26273196.jpg"
+                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/26273196.jpg",
+                "image_local":"./images/Time-Wizard-of-Tomorrow.jpg"
             }
         ],
         "card_prices": [
@@ -635,7 +659,8 @@ const Cards: {
                 "id": 32617464,
                 "image_url": "https://images.ygoprodeck.com/images/cards/32617464.jpg",
                 "image_url_small": "https://images.ygoprodeck.com/images/cards_small/32617464.jpg",
-                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/32617464.jpg"
+                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/32617464.jpg",
+                "image_local":"./images/Tri-gate-Wizard.jpg"
             }
         ],
         "card_prices": [
@@ -682,7 +707,8 @@ const Cards: {
                 "id": 2602411,
                 "image_url": "https://images.ygoprodeck.com/images/cards/2602411.jpg",
                 "image_url_small": "https://images.ygoprodeck.com/images/cards_small/2602411.jpg",
-                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/2602411.jpg"
+                "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/2602411.jpg",
+                "image_local":"./images/Wizard-Buster-Destruction-Sword.jpg"
             }
         ],
         "card_prices": [

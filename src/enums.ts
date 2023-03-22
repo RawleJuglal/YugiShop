@@ -1,0 +1,5 @@
+export enum TraderLevel {
+    RARE_TRADER = 'RARE_TRADER',
+    ELITE_TRADER = 'ELITE_TRADER',
+    COMMON_TRADER = 'COMMON_TRADER'
+}
