@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/images/game.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yugi Shop</title>
   </head>
@@ -11,15 +15,16 @@
     <div id="app">
         <header id="header" class="--header">
           <div class="--header-logo">
-            <img class="--header-shop-icon" src="/images/shop.png" alt="images of a shop">
+            <img class="--header-shop-icon animate__animated animate__rotateIn" src="/images/shop.png" alt="images of a shop">
           </div>
           <p id="header-user" class="--header-user">Welcome User</p>
         </header>
         <section id="main-content" class="--main-content-container">
-          <div id="reviews"></div>
-          <button>Get reviews</button>
-          <p>Other Yugi-Oh wizard cards you might be interested in:</p>
-          <div id="cards" class="--main-content-cards"></div>
+          <div id="main-img" class="--main-content-img"></div>
+          <div id="reviews" class="--main-content-reviews"></div>
+          <button class="--main-content-reviews-btn">Get reviews</button>
+          <p class="--main-content-more-cards">Other Yugi-Oh wizard cards you might be interested in:</p>
+          <div id="cards" class="--main-content-cards-container"></div>
         </section>
         <footer id="footer" class="--footer">
 
