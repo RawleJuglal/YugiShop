@@ -77,7 +77,13 @@ const Cards: {
     archetype?:string;
     linkval?:number;
     linkmarkers?:string[];
-    card_sets?:{}[];
+    card_sets?:{
+        "set_name": string;
+        "set_code": string;
+        "set_rarity": string;
+        "set_rarity_code": string;
+        "set_price": string;
+    }[];
     card_images:{
         "id": number;
         "image_url": string;

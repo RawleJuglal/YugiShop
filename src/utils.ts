@@ -6,7 +6,7 @@ const userNameDisplay = document.querySelector<HTMLElement>('#header-user');
 export function displayReviews(reviews: number, name:string, trader: TraderLevel): void{
     if (!reviewsTotalDisplay) throw new ReferenceError("Cards div not found.");
     let crown = trader === TraderLevel.RARE_TRADER ? '👑' : ''
-    reviewsTotalDisplay.innerHTML = `${reviews.toString()} review${makeMultiple(reviews)} : Most recent review was ${name} ${crown} `
+    reviewsTotalDisplay.innerHTML = `<p class="--main-content-review-total">${reviews.toString()} Yugi Shop review${makeMultiple(reviews)}</p><p class="--main-content-recent-review">Most recent review was <span class="--main-content-reviewer bold">${name}</span> ${crown}</p>`
 }
 
 export function populateUser(isReturning:boolean, username:string): void{
@@ -43,4 +43,12 @@ export function getAllReviews(reviews : {
 }[]{
     const sortedReviews = reviews.sort((a,b) => b.stars - a.stars);
     return sortedReviews;
+}
+
+export function replaceWithStars(reviewStar: number): string{
+    let starString:string = ''
+    for(let i = 0; i<reviewStar; i++){
+        starString+='⭐'
+    }
+    return starString;
 }
