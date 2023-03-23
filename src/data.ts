@@ -1,5 +1,5 @@
-import { TraderLevel } from "./src/enums";
-import { Level, Monster, FrameType, Race, Attr} from './src/types'
+import { TraderLevel } from "./enums";
+import { Level, Monster, FrameType, Race, Attr} from './types'
 
 const user: {
     firstName:string;

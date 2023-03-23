@@ -1,6 +1,6 @@
 import './style.css'
 import {  displayReviews, populateUser, showDetails, getAllReviews, replaceWithStars } from './utils';
-import { user, reviews, Cards } from '../data'
+import { user, reviews, Cards } from './data'
 import { Review } from './interfaces';
 import { TraderLevel } from './enums';
 
