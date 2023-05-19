@@ -1,5 +1,5 @@
 # YugiShop 
-Welcome to Quick Cart! This is a project built by **[Rawle Juglal](https://twitter.com/therawle)** and is loosely based on  **[Learn Typescript](https://scrimba.com/learn/typescript)** course.
+Welcome to YugiShop! This is a project built by **[Rawle Juglal](https://twitter.com/therawle)** and is loosely based on  **[Learn Typescript](https://scrimba.com/learn/typescript)** course.
 
 ## Installation
 To install this project on your machine, you will need to 
